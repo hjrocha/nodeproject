@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --reporter dot",
     "coverage": "nyc --reporter html --reporter text npm test",
-    "coverage-to-codacy": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage --token efc7bac080a342ae9383ef1c1193cb5f && rm -rf ./coverage"
+    "coverage-to-codacy": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage --token efc7bac080a342ae9383ef1c1193cb5f -e http://63.35.22.201:16006 && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
