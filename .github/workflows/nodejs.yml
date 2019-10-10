@@ -17,8 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm coverage-to-codacy
+    - name: npm coverage
+      run: npm coverage-to-codacy
       env:
         CI: true
