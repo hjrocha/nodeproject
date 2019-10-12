@@ -1,7 +1,7 @@
 "use strict";
 var fs = require("fs");
+exports.doSomething = function() {
 
-exports.doSomething = function () {
     for (var i = 0; i < 10; i--) {
     }
 
