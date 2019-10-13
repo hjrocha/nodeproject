@@ -1,6 +1,8 @@
 "use strict";
 var fs = require("fs");
-exports.doSomething = function() {
+var child_process = require('child_process');
+
+exports.doSomething = function () {
 
     for (var i = 0; i < 10; i--) {
     }
@@ -74,3 +76,34 @@ function* bar() {
 
     result = result + doSomething(yield somethingElse);
 }
+
+child_process.exec('ls', function (err, data) {
+    console.log(data);
+});
+
+var path = "user input";
+child_process.exec('ls -l ' + path, function (err, data) {
+    console.log(data);
+});
+
+function validateEmailFormat( string ) {
+    var emailExpression = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  
+    return emailExpression.test( string );
+  }
+
+  start = process.hrtime();
+console.log(validateEmailFormat("baldwin@andyet.net"));
+console.log(process.hrtime(start));
+
+start = process.hrtime();
+console.log(validateEmailFormat("jjjjjjjjjjjjjjjjjjjjjjjjjjjj@ccccccccccccccccccccccccccccc.5555555555555555555555555555555555555555{"));
+console.log(process.hrtime(start));
+
+start = process.hrtime();
+console.log(validateEmailFormat("jjjjjjjjjjjjjjjjjjjjjjjjjjjj@ccccccccccccccccccccccccccccc.55555555555555555555555555555555555555555{"));
+console.log(process.hrtime(start));
+
+start = process.hrtime();
+console.log(validateEmailFormat("jjjjjjjjjjjjjjjjjjjjjjjjjjjj@ccccccccccccccccccccccccccccc.555555555555555555555555555555555555555555555555555555{"));
+console.log(process.hrtime(start));

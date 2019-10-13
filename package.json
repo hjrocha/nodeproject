@@ -23,5 +23,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^6.2.1",
     "nyc": "^14.1.1"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
   }
 }
